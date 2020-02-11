@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.ts",
+  entry: "./src/index.tsx",
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist")
@@ -21,7 +21,6 @@ module.exports = {
   },
   devtool: "inline-source-map",
   devServer: {
-    contentBase: path.resolve("static"),
-    publicPath: path.resolve("static")
+    contentBase: path.join(__dirname, "static")
   }
 };
