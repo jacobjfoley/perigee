@@ -1,3 +1,5 @@
-.body {
+body {
+  color: #fff;
   background-color: #222;
+  font-family: sans-serif;
 }
