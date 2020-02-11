@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server",
     "clean": "rimraf -rf dist",
-    "build": "webpack-cli"
+    "build": "webpack-cli",
+    "deploy": "npm run build && aws s3 sync static s3://perigee.jacobjfoley.com && aws s3 sync dist s3://perigee.jacobjfoley.com"
   },
   "repository": {
     "type": "git",
