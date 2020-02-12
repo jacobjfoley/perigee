@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "webpack-dev-server",
-    "clean": "rimraf -rf dist",
+    "clean": "rimraf dist",
     "build": "webpack-cli",
     "deploy": "npm run build && aws s3 sync static s3://perigee.jacobjfoley.com && aws s3 sync dist s3://perigee.jacobjfoley.com"
   },
