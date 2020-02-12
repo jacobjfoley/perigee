@@ -4,7 +4,7 @@
   "description": "A near-future space salvage game",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "webpack-dev-server",
     "clean": "rimraf -rf dist",
     "build": "webpack-cli",
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/jacobjfoley/perigee#readme",
   "devDependencies": {
+    "@types/jest": "^25.1.2",
     "@typescript-eslint/eslint-plugin": "^2.19.2",
     "@typescript-eslint/parser": "^2.19.2",
     "eslint": "^6.8.0",
@@ -33,9 +34,12 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
     "husky": "^4.2.1",
+    "jest": "^25.1.0",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
+    "react-testing-library": "^8.0.1",
     "rimraf": "^3.0.2",
+    "ts-jest": "^25.2.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.5",
     "webpack": "^4.41.5",
@@ -50,7 +54,6 @@
   "dependencies": {
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
-    "jest": "^25.1.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.3",
