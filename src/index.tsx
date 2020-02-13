@@ -1,15 +1,10 @@
 import React from "react";
 import reactDOM from "react-dom";
-import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
 
 import reducer from "./reducers";
-
-interface WelcomeProps {}
-
-const Welcome = () => {
-  return <h1>Hello, React!</h1>;
-};
+import App from "./components/App";
 
 const store = configureStore({
   reducer
@@ -18,7 +13,7 @@ const store = configureStore({
 const container = document.getElementById("app");
 reactDOM.render(
   <Provider store={store}>
-    <Welcome />
+    <App />
   </Provider>,
   container
 );
