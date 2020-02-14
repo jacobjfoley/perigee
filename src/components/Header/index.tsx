@@ -43,11 +43,11 @@ const Header = () => {
   return (
     <Container>
       <Title>Perigee</Title>
-      <a href="https://github.com/jacobjfoley/perigee">
-        <GitHubIcon src="/img/github.png" />
-      </a>
       <a href="https://open.spotify.com/playlist/5tttPAXRMPkJqdc8FnJZH3">
         <SpotifyIcon src="/img/spotify.png" />
+      </a>
+      <a href="https://github.com/jacobjfoley/perigee">
+        <GitHubIcon src="/img/github.png" />
       </a>
       <Website href="https://www.jacobjfoley.com/">JF</Website>
       <About>ⓘ</About>
