@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "webpack-dev-server",
-    "build": "webpack-cli",
+    "build": "webpack-cli --mode production",
     "deploy": "npm run build && aws s3 sync --delete dist s3://perigee.jacobjfoley.com",
     "clean": "rimraf dist"
   },
