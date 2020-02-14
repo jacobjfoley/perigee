@@ -7,8 +7,8 @@ import AppRouter from "../AppRouter";
 
 const Container = styled.div`
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr;
 `;
 
 const App = () => {

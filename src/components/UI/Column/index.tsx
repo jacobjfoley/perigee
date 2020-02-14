@@ -8,7 +8,7 @@ interface ColumnProps {
 const Container = styled.div`
   margin: 0 auto;
   width: 72rem;
-  flex: 1;
+  height: 100%;
 `;
 
 const Column = (props: ColumnProps) => {
