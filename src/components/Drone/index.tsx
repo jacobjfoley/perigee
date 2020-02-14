@@ -2,6 +2,8 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const Container = styled.div`
+  border: 2px solid #444;
+  padding: 1rem 3rem;
   height: 6rem;
   display: flex;
   align-items: center;
