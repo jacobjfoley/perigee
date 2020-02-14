@@ -4,7 +4,7 @@
   "description": "A near-future space salvage game",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest src",
     "start": "webpack-dev-server",
     "build": "webpack-cli --mode production",
     "deploy": "npm run build && aws s3 sync --delete dist s3://perigee.jacobjfoley.com",

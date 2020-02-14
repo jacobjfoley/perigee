@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Slot from "../Slot";
+import Drone from "../Drone";
 
 interface RosterProps {
   slots: number;
@@ -10,7 +11,7 @@ interface RosterProps {
 const Container = styled.div`
   padding: 2rem;
 
-  div + div {
+  & > div + div {
     margin-top: 1rem;
   }
 `;
@@ -22,7 +23,12 @@ const Roster = (props: RosterProps) => {
     slots.push(<Slot key={i} />);
   }
 
-  return <Container>{...slots}</Container>;
+  return (
+    <Container>
+      <Drone />
+      {...slots}
+    </Container>
+  );
 };
 
 export default Roster;
