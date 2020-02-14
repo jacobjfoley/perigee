@@ -5,43 +5,52 @@ const Container = styled.header`
   padding: 1rem;
   background-color: #333;
   display: flex;
+
+  a + a {
+    margin-left: 1.6rem;
+  }
 `;
 
 const Title = styled.div`
   flex: 1 1;
+  font: bold 2rem sans-serif;
 `;
 
-const GitHub = styled.a``;
+const GitHubIcon = styled.img`
+  width: 2rem;
+  filter: invert();
+`;
 
-const GitHubIcon = styled.img``;
+const SpotifyIcon = styled.img`
+  width: 2rem;
+`;
 
-const Spotify = styled.a``;
+const Website = styled.a`
+  color: #fff;
+  font: bold 2rem "Courgette";
+  line-height: 2rem;
+  text-decoration: none;
+  cursor: pointer;
+`;
 
-const SpotifyIcon = styled.img``;
-
-const Website = styled.a``;
-
-const WebsiteIcon = styled.img``;
-
-const About = styled.div``;
+const About = styled.a`
+  font: bold 2rem "Courgette";
+  line-height: 2rem;
+  cursor: pointer;
+`;
 
 const Header = () => {
   return (
     <Container>
       <Title>Perigee</Title>
-      <GitHub>
-        <GitHubIcon />
-        GitHub
-      </GitHub>
-      <Spotify>
-        <SpotifyIcon />
-        Spotify
-      </Spotify>
-      <Website>
-        <WebsiteIcon />
-        Website
-      </Website>
-      <About>?</About>
+      <a href="https://github.com/jacobjfoley/perigee">
+        <GitHubIcon src="/img/github.png" />
+      </a>
+      <a href="https://open.spotify.com/">
+        <SpotifyIcon src="/img/spotify.png" />
+      </a>
+      <Website href="https://www.jacobjfoley.com/">JF</Website>
+      <About>ⓘ</About>
     </Container>
   );
 };
