@@ -6,9 +6,9 @@
   "scripts": {
     "test": "jest",
     "start": "webpack-dev-server",
-    "clean": "rimraf dist",
     "build": "webpack-cli",
-    "deploy": "npm run build && aws s3 sync --delete dist s3://perigee.jacobjfoley.com"
+    "deploy": "npm run build && aws s3 sync --delete dist s3://perigee.jacobjfoley.com",
+    "clean": "rimraf dist"
   },
   "repository": {
     "type": "git",
