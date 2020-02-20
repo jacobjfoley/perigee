@@ -20,19 +20,26 @@ describe("Drone reducer utils", () => {
     expect(serial).toMatch(/[0-9a-f]{32}/);
   });
 
-  test("generateDrone", () => {
-    const drone = generateDrone();
-    expect(Object.keys(drone).length).toEqual(10);
-    expect(drone).toHaveProperty("id");
-    expect(drone).toHaveProperty("createdAt");
-    expect(drone).toHaveProperty("serialNumber");
-    expect(drone).toHaveProperty("cutting");
-    expect(drone).toHaveProperty("mining");
-    expect(drone).toHaveProperty("durability");
-    expect(drone).toHaveProperty("welding");
-    expect(drone).toHaveProperty("health");
-    expect(drone).toHaveProperty("experience");
-    expect(drone).toHaveProperty("status");
+  describe("generateDrone", () => {
+    test("generates a drone", () => {
+      const drone = generateDrone();
+      expect(Object.keys(drone).length).toEqual(10);
+      expect(drone).toHaveProperty("id");
+      expect(drone).toHaveProperty("createdAt");
+      expect(drone).toHaveProperty("serialNumber");
+      expect(drone).toHaveProperty("cutting");
+      expect(drone).toHaveProperty("mining");
+      expect(drone).toHaveProperty("durability");
+      expect(drone).toHaveProperty("welding");
+      expect(drone).toHaveProperty("health");
+      expect(drone).toHaveProperty("experience");
+      expect(drone).toHaveProperty("status");
+    });
+
+    test("preserves serial number if provided", () => {
+      const drone = generateDrone("481851f8819322e4c6ff2ec8a5a55fcf");
+      expect(drone.serialNumber).toEqual("481851f8819322e4c6ff2ec8a5a55fcf");
+    });
   });
 
   test("calculateStat", () => {

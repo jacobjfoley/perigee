@@ -64,7 +64,7 @@ function timePassesHander(): void {
 
 // function encounterIcyAsteroidHandler(state, action) {}
 
-const reducer = createReducer(
+export default createReducer(
   {},
   {
     [createDrone.type]: createDroneHandler,
@@ -75,5 +75,3 @@ const reducer = createReducer(
     [passTime.type]: timePassesHander
   }
 );
-
-export default reducer;

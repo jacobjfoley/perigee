@@ -2,8 +2,10 @@ import { v4 } from "uuid";
 
 import { Drone, DroneStatus } from "../../types";
 
+// Drone serial numbers act as their "DNA".
 const SERIAL_NUMBER_LENGTH = 32;
 
+// "Genes" can be read from a serial number for evolutionary algortihms.
 const GENE_LENGTH = 2;
 const DURABILITY_POSITION = 2;
 const WELDING_POSITION = 7;
@@ -33,7 +35,21 @@ export function generateSerialNumber(): string {
   return serial.join("");
 }
 
-// Return a calculated stat from 0 to 1.0.
+// Mutate a serial number.
+export function mutateSerialNumber(serialNumber: string): string {
+  const genes = Array.from(serialNumber);
+  const newGenes = genes.map(gene => {
+    const preservationChance = Math.random();
+    if (preservationChance < MUTATION_CHANCE) {
+      return generateHex();
+    } else {
+      return gene;
+    }
+  });
+  return newGenes.join("");
+}
+
+// Return a calculated stat from two hex digits, result is from 0 to 1.0.
 export function calculateStat(hex: string): number {
   const number = parseInt(hex, 16);
   return number / 255;
@@ -79,20 +95,6 @@ export function generateDrone(fixedSerialNumber?: string): Drone {
     ...stats
   };
   return entry;
-}
-
-// Mutate a serial number.
-export function mutateSerialNumber(serialNumber: string): string {
-  const genes = Array.from(serialNumber);
-  const newGenes = genes.map(gene => {
-    const chance = Math.random();
-    if (chance < MUTATION_CHANCE) {
-      return generateHex();
-    } else {
-      return gene;
-    }
-  });
-  return newGenes.join("");
 }
 
 // Remanufacture a drone into several new drones.
