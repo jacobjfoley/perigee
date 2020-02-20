@@ -7,5 +7,13 @@ export enum DroneStatus {
 
 export interface Drone {
   id: string;
+  serialNumber: string;
+  createdAt: number;
   status: DroneStatus;
+  experience: number;
+  health: number;
+  durability: number;
+  mining: number;
+  welding: number;
+  cutting: number;
 }

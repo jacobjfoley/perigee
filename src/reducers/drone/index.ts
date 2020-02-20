@@ -1,4 +1,3 @@
-import { v4 } from "uuid";
 import { createReducer } from "@reduxjs/toolkit";
 
 import { Drone, DroneStatus } from "../../types";
@@ -12,16 +11,14 @@ import {
   DroneAction,
   RemanufactureDroneAction
 } from "../../actions";
+import { generateDrone, generateRemanufacturedDrones } from "./utils";
 
 export interface DroneStore {
   [id: string]: Drone;
 }
 
 function createDroneHandler(state: DroneStore): void {
-  const entry = {
-    id: v4(),
-    status: DroneStatus.ACTIVE
-  };
+  const entry = generateDrone();
   state[entry.id] = entry;
 }
 
@@ -41,16 +38,9 @@ function remanufactureDroneHandler(
   state: DroneStore,
   action: RemanufactureDroneAction
 ): void {
-  // Insert remanufactured drones.
-  for (let i = 0; i < action.payload.count; i++) {
-    const entry = {
-      id: v4(),
-      status: DroneStatus.ACTIVE
-    };
-    state[entry.id] = entry;
-  }
-
-  // Remove original drone.
+  const drone = state[action.payload.id];
+  const children = generateRemanufacturedDrones(drone, action.payload.count);
+  children.forEach(child => (state[child.id] = child));
   delete state[action.payload.id];
 }
 
