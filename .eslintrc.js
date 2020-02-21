@@ -25,5 +25,13 @@ module.exports = {
     sourceType: "module"
   },
   plugins: ["react", "@typescript-eslint"],
-  rules: {}
+  rules: {},
+  overrides: [
+    {
+      files: ["*.js"],
+      rules: {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
 };
