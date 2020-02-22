@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { createDrone } from "../../actions";
 
 const Container = styled.div`
   border: 2px dashed #444;
@@ -11,7 +12,7 @@ const Container = styled.div`
 `;
 
 interface Props {
-  createDrone: any;
+  createDrone: typeof createDrone;
 }
 
 const Slot: React.FunctionComponent<Props> = (props: Props) => {
