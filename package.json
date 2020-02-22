@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest src",
+    "lint": "eslint --ext .ts --ext .tsx --ext .js --ext .jsx src",
     "start": "webpack-dev-server",
     "build": "webpack-cli --mode production",
     "deploy": "npm run build && aws s3 sync --delete dist s3://perigee.jacobjfoley.com",

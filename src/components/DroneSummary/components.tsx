@@ -1,5 +1,7 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled, { css, FlattenSimpleInterpolation } from "styled-components";
+
+import { Drone } from "../../types";
 
 const Container = styled.div`
   border: 2px solid #444;
@@ -24,7 +26,7 @@ interface HealthProps {
 
 const Health = styled.div`
   flex: 1 1 0;
-  background-image: ${(props: HealthProps) =>
+  background-image: ${(props: HealthProps): FlattenSimpleInterpolation =>
     css`linear-gradient(90deg, #6f6 ${props.health}%, #222 ${props.health}%)`};
 `;
 
@@ -34,7 +36,7 @@ interface ExperienceProps {
 
 const Experience = styled.div`
   flex: 1 1 0;
-  background-image: ${(props: ExperienceProps) =>
+  background-image: ${(props: ExperienceProps): FlattenSimpleInterpolation =>
     css`linear-gradient(90deg, #66f ${props.experience}%, #222 ${props.experience}%)`};
 `;
 
@@ -54,17 +56,27 @@ const Level = styled.div`
   line-height: 1;
 `;
 
-const Drone = () => {
+const PER_LEVEL = 1000;
+
+export interface Props {
+  drone: Drone;
+}
+
+const DroneSummary: React.FunctionComponent<Props> = (props: Props) => {
+  const healthPercent = props.drone.health;
+  const experiencePercent = (props.drone.experience % PER_LEVEL) / 10;
+  const level = Math.floor(props.drone.experience / PER_LEVEL);
+
   return (
     <Container>
       <Icon>🛰</Icon>
       <BarContainer>
-        <Health health={80} />
-        <Experience experience={80} />
+        <Health health={healthPercent} />
+        <Experience experience={experiencePercent} />
       </BarContainer>
-      <Level>Lvl 12</Level>
+      <Level>Lvl {Math.floor(level)}</Level>
     </Container>
   );
 };
 
-export default Drone;
+export default DroneSummary;

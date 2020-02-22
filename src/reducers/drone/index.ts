@@ -1,6 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
 
-import { Drone, DroneStatus } from "../../types";
+import { DroneStore, DroneStatus } from "../../types";
 import {
   createDrone,
   storeDrone,
@@ -12,10 +12,6 @@ import {
   RemanufactureDroneAction
 } from "../../actions";
 import { generateDrone, generateRemanufacturedDrones } from "./utils";
-
-export interface DroneStore {
-  [id: string]: Drone;
-}
 
 function createDroneHandler(state: DroneStore): void {
   const entry = generateDrone();

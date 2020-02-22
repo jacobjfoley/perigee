@@ -7,10 +7,15 @@ import { ThemeProvider } from "styled-components";
 import theme from "./theme";
 import reducer from "./reducers";
 import App from "./components/App";
+import { createDrone } from "./actions";
 
 const store = configureStore({
   reducer
 });
+
+store.dispatch(createDrone());
+store.dispatch(createDrone());
+store.dispatch(createDrone());
 
 const container = document.getElementById("app");
 reactDOM.render(

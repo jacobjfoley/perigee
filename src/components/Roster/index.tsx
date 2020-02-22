@@ -1,34 +1,16 @@
-import React from "react";
-import styled from "styled-components";
+import { connect } from "react-redux";
 
-import Slot from "../Slot";
-import Drone from "../Drone";
+import { StoreState } from "../../types";
+import Roster from "./component";
 
-interface RosterProps {
+interface MappedProps {
   slots: number;
+  droneIds: string[];
 }
 
-const Container = styled.div`
-  padding: 2rem;
+const mapStateToProps = (state: StoreState): MappedProps => ({
+  droneIds: Object.values(state.drone).map(drone => drone.id),
+  slots: 12
+});
 
-  & > div + div {
-    margin-top: 1rem;
-  }
-`;
-
-const Roster = (props: RosterProps) => {
-  const slots = [];
-
-  for (let i = 0; i < props.slots; i++) {
-    slots.push(<Slot key={i} />);
-  }
-
-  return (
-    <Container>
-      <Drone />
-      {...slots}
-    </Container>
-  );
-};
-
-export default Roster;
+export default connect(mapStateToProps)(Roster);

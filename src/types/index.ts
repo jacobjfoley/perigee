@@ -17,3 +17,11 @@ export interface Drone {
   welding: number;
   cutting: number;
 }
+
+export interface DroneStore {
+  [id: string]: Drone;
+}
+
+export interface StoreState {
+  drone: DroneStore;
+}
