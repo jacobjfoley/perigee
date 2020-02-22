@@ -39,7 +39,7 @@ const About = styled.a`
   cursor: pointer;
 `;
 
-const Header = () => {
+const Header: React.FunctionComponent = () => {
   return (
     <Container>
       <Title>Perigee</Title>

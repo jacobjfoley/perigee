@@ -11,7 +11,7 @@ const Container = styled.div`
   grid-template-rows: auto 1fr;
 `;
 
-const App = () => {
+const App: React.FunctionComponent = () => {
   return (
     <Container>
       <Header />

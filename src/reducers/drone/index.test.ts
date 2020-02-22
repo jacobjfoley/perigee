@@ -1,4 +1,4 @@
-import { Drone, DroneStatus } from "../../types";
+import { Drone, DroneStatus, DroneStore } from "../../types";
 import {
   createDrone,
   storeDrone,
@@ -7,7 +7,7 @@ import {
   remanufactureDrone,
   passTime
 } from "../../actions";
-import reducer, { DroneStore } from "./index";
+import reducer from "./index";
 
 let defaultState: DroneStore;
 

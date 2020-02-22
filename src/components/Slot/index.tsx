@@ -1,17 +1,10 @@
-import React from "react";
-import styled from "styled-components";
+import { connect } from "react-redux";
 
-const Container = styled.div`
-  border: 2px dashed #444;
-  height: 4rem;
-  color: #777;
-  text-align: center;
-  line-height: 4rem;
-  cursor: pointer;
-`;
+import { createDrone } from "../../actions";
+import Slot from "./components";
 
-const Slot = () => {
-  return <Container>Create</Container>;
+const mapDispatchToProps = {
+  createDrone
 };
 
-export default Slot;
+export default connect(undefined, mapDispatchToProps)(Slot);

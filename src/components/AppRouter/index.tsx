@@ -8,10 +8,10 @@ const Container = styled.div`
   background-color: #2a2a2a;
 `;
 
-const AppRouter = () => {
+const AppRouter: React.FunctionComponent = () => {
   return (
     <Container>
-      <Roster slots={12} />
+      <Roster />
     </Container>
   );
 };
