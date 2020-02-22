@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { StoreState, Drone } from "../../types";
+import { Store, Drone } from "../../types";
 import DroneSummary from "./components";
 
 interface Props {
@@ -11,7 +11,7 @@ interface MappedProps {
   drone: Drone;
 }
 
-const mapStateToProps = (state: StoreState, ownProps: Props): MappedProps => ({
+const mapStateToProps = (state: Store, ownProps: Props): MappedProps => ({
   drone: state.drone[ownProps.id]
 });
 
