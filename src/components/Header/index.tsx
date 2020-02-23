@@ -2,9 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.header`
-  padding: 1rem;
-  background-color: #333;
+  padding: 1.2rem 2.4rem;
+  background-color: #323232;
+  border: 2px solid #444;
+  border-width: 0 0 2px;
   display: flex;
+  align-items: center;
 
   a + a {
     margin-left: 1.6rem;
@@ -12,30 +15,28 @@ const Container = styled.header`
 `;
 
 const Title = styled.div`
-  flex: 1 1;
-  font: bold 2rem sans-serif;
+  flex: 1 1 auto;
+  font: bold 2.6rem "Courgette", sans-serif;
 `;
 
 const GitHubIcon = styled.img`
-  width: 2rem;
+  width: 1.8rem;
   filter: invert();
 `;
 
 const SpotifyIcon = styled.img`
-  width: 2rem;
+  width: 1.8rem;
 `;
 
 const Website = styled.a`
   color: #fff;
-  font: bold 2rem "Courgette";
-  line-height: 2rem;
+  font: bold 1.8rem "Courgette", sans-serif;
   text-decoration: none;
   cursor: pointer;
 `;
 
 const About = styled.a`
-  font: bold 2rem "Courgette";
-  line-height: 2rem;
+  font: bold 1.8rem "Courgette", sans-serif;
   cursor: pointer;
 `;
 

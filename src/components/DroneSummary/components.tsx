@@ -5,7 +5,7 @@ import { Drone } from "../../types";
 
 const Container = styled.div`
   border: 2px solid #444;
-  padding: 1rem 3rem;
+  padding: 0.5rem 3rem;
   height: 6rem;
   display: flex;
   align-items: center;
@@ -52,7 +52,7 @@ const BarContainer = styled.div`
 `;
 
 const Level = styled.div`
-  font: bold 2rem sans-serif;
+  font: bold 1.6rem sans-serif;
   line-height: 1;
 `;
 
