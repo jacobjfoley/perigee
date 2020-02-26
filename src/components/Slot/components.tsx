@@ -15,15 +15,7 @@ interface Props {
 }
 
 const Slot: React.FunctionComponent<Props> = (props: Props) => {
-  return (
-    <Container
-      onClick={(): void => {
-        props.createDrone();
-      }}
-    >
-      Create
-    </Container>
-  );
+  return <Container onClick={props.createDrone}>Create</Container>;
 };
 
 export default Slot;
