@@ -1,6 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 
 import { DroneStore, DroneStatus } from "../../types";
+import { generateDrone, generateRemanufacturedDrones } from "./utils";
 import {
   createDrone,
   storeDrone,
@@ -11,7 +12,6 @@ import {
   DroneAction,
   RemanufactureDroneAction
 } from "../../actions";
-import { generateDrone, generateRemanufacturedDrones } from "./utils";
 
 function createDroneHandler(state: DroneStore): void {
   const entry = generateDrone();
@@ -60,14 +60,13 @@ function timePassesHander(): void {
 
 // function encounterIcyAsteroidHandler(state, action) {}
 
-export default createReducer(
-  {},
-  {
-    [createDrone.type]: createDroneHandler,
-    [storeDrone.type]: storeDroneHandler,
-    [unstoreDrone.type]: unstoreDroneHandler,
-    [scrapDrone.type]: scrapDroneHandler,
-    [remanufactureDrone.type]: remanufactureDroneHandler,
-    [passTime.type]: timePassesHander
-  }
-);
+const initialState: DroneStore = {};
+
+export default createReducer(initialState, {
+  [createDrone.type]: createDroneHandler,
+  [storeDrone.type]: storeDroneHandler,
+  [unstoreDrone.type]: unstoreDroneHandler,
+  [scrapDrone.type]: scrapDroneHandler,
+  [remanufactureDrone.type]: remanufactureDroneHandler,
+  [passTime.type]: timePassesHander
+});

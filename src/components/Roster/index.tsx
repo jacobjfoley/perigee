@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { Store } from "../../types";
+import { RootState } from "../../types";
 import Roster from "./component";
 
 interface MappedProps {
@@ -8,7 +8,7 @@ interface MappedProps {
   droneIds: string[];
 }
 
-const mapStateToProps = (state: Store): MappedProps => ({
+const mapStateToProps = (state: RootState): MappedProps => ({
   droneIds: Object.values(state.drone).map(drone => drone.id),
   slots: 12
 });

@@ -22,6 +22,6 @@ export interface DroneStore {
   [id: string]: Drone;
 }
 
-export interface Store {
+export interface RootState {
   drone: DroneStore;
 }
