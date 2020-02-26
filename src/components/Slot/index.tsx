@@ -11,7 +11,4 @@ const mapDispatchToProps = {
   createDrone
 };
 
-export default connect<undefined, DispatchProps>(
-  undefined,
-  mapDispatchToProps
-)(Slot);
+export default connect<{}, DispatchProps>(undefined, mapDispatchToProps)(Slot);
