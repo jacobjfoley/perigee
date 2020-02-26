@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { css, FlattenSimpleInterpolation } from "styled-components";
 
 import { Drone } from "../../types";
+import Modal from "../UI/Modal";
 
 const Container = styled.div`
   border: 2px solid #444;
@@ -9,6 +10,7 @@ const Container = styled.div`
   height: 6rem;
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   & > div + div {
     margin-left: 2rem;
@@ -63,19 +65,24 @@ export interface Props {
 }
 
 const DroneSummary: React.FunctionComponent<Props> = (props: Props) => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
   const healthPercent = props.drone.health;
   const experiencePercent = (props.drone.experience % PER_LEVEL) / 10;
   const level = Math.floor(props.drone.experience / PER_LEVEL);
 
   return (
-    <Container>
-      <Icon>🛰</Icon>
-      <BarContainer>
-        <Health health={healthPercent} />
-        <Experience experience={experiencePercent} />
-      </BarContainer>
-      <Level>Lvl {Math.floor(level)}</Level>
-    </Container>
+    <>
+      <Container onClick={(): void => setModalOpen(true)}>
+        <Icon>🛰</Icon>
+        <BarContainer>
+          <Health health={healthPercent} />
+          <Experience experience={experiencePercent} />
+        </BarContainer>
+        <Level>Lvl {Math.floor(level)}</Level>
+      </Container>
+      {isModalOpen && <Modal onClose={(): void => setModalOpen(false)} />}
+    </>
   );
 };
 

@@ -11,6 +11,8 @@ const Container = styled.div`
   grid-template-rows: auto 1fr;
 `;
 
+const ModalPortal = styled.div``;
+
 const App: React.FunctionComponent = () => {
   return (
     <Container>
@@ -18,6 +20,7 @@ const App: React.FunctionComponent = () => {
       <Column>
         <AppRouter />
       </Column>
+      <ModalPortal id="modalPortal" />
     </Container>
   );
 };
