@@ -5,9 +5,7 @@ import Modal from "./index";
 
 describe("Modal", () => {
   test("renders", () => {
-    const mockClose = (): void => {
-      return;
-    };
+    const mockClose = jest.fn();
     render(<Modal onClose={mockClose} />);
   });
 
@@ -24,5 +22,18 @@ describe("Modal", () => {
     const button = getByText(modalPortal, "✕");
     fireEvent.click(button);
     expect(mockClose.mock.calls.length).toEqual(1);
+  });
+
+  test("shows a custom header when provided", () => {
+    const mockClose = jest.fn();
+    render(<Modal onClose={mockClose} />);
+    const modalPortal = document.getElementById("modalPortal");
+
+    if (!modalPortal) {
+      expect(modalPortal).toBeDefined();
+      return;
+    }
+
+    expect(getByText(modalPortal, /Test Header/i)).not.toBeNull();
   });
 });
