@@ -6,7 +6,7 @@ Perigee is a near-future space salvage game.
 
 As the director of a Perigee station, you are responsible for clearing up space junk in Earth's low orbit. To accomplish this, you have a small workshop and hangar bay for drones which can salvage nearby space junk.
 
-Your drones are built using an evolutionary algorithm and will have various strengths and weaknesses which will become apparent over time. A drone can be remanufactured in your workshop to split it into several new drones with similar, but not identical, properties. Drones can also be scrapped to free up space in your hangar. High-performing drones will help work go significantly faster.
+Your drones are built using an evolutionary algorithm and will have various strengths and weaknesses which will become apparent over time. A drone can be remanufactured in your workshop to split it into several new drones with similar, but not identical, properties. Drones can also be scrapped to free up space in your hangar. High-performing drones will help work go significantly faster!
 
 ## Installation
 
@@ -28,7 +28,7 @@ Your drones are built using an evolutionary algorithm and will have various stre
 Perigee is managed by three main panels. Station, Roster and Assignments.
 
 - The Station screen shows the inventory and upgrades available to the Perigee station.
-- The Roster shows all drones that are either active, stored or scrapheap.
+- The Roster shows all drones that are either active, stored or in the scrap heap.
 - The Assignments shows whether active drones are at the station or in a local orbit.
 
 ### Station
