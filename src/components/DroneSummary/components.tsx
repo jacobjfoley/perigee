@@ -22,24 +22,12 @@ const Icon = styled.div`
   line-height: 1;
 `;
 
-interface HealthProps {
-  health: number;
-}
-
 const Health = styled.div`
   flex: 1 1 0;
-  background-image: ${(props: HealthProps): FlattenSimpleInterpolation =>
-    css`linear-gradient(90deg, #6f6 ${props.health}%, #222 ${props.health}%)`};
 `;
-
-interface ExperienceProps {
-  experience: number;
-}
 
 const Experience = styled.div`
   flex: 1 1 0;
-  background-image: ${(props: ExperienceProps): FlattenSimpleInterpolation =>
-    css`linear-gradient(90deg, #66f ${props.experience}%, #222 ${props.experience}%)`};
 `;
 
 const BarContainer = styled.div`
@@ -67,8 +55,8 @@ export interface Props {
 const DroneSummary: React.FunctionComponent<Props> = (props: Props) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
-  const healthPercent = props.drone.health;
-  const experiencePercent = (props.drone.experience % PER_LEVEL) / 10;
+  // const healthPercent = props.drone.health;
+  // const experiencePercent = (props.drone.experience % PER_LEVEL) / 10;
   const level = Math.floor(props.drone.experience / PER_LEVEL);
 
   return (
@@ -76,8 +64,8 @@ const DroneSummary: React.FunctionComponent<Props> = (props: Props) => {
       <Container onClick={(): void => setModalOpen(true)}>
         <Icon>🛰</Icon>
         <BarContainer>
-          <Health health={healthPercent} />
-          <Experience experience={experiencePercent} />
+          <Health />
+          <Experience />
         </BarContainer>
         <Level>Lvl {Math.floor(level)}</Level>
       </Container>
