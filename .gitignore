@@ -1,4 +1,11 @@
+# Editors.
 .vscode
+
+# Node.
 node_modules
+
+# Build.
 dist
+
+# Test.
 coverage
